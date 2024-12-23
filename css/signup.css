@@ -1,0 +1,214 @@
+/* start global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --transition: 0.4s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/dark-night-rain-car-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* samll */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+/* start sign-up page */
+.sign_up {
+    background-color: #ffffffed;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 40px;
+    padding-top: 120px;
+    width: fit-content;
+    border-radius: 35px;
+}
+
+.sign_up .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sign_up .forms {
+    text-align: center;
+}
+
+.sign_up .forms h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+@media (max-width: 767px) {
+    .sign_up .forms h2 {
+        margin-bottom: 20px;
+    }
+}
+
+.sign_up .forms form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign_up .forms form input {
+    border-radius: 20px;
+    border-color: transparent;
+    height: 40px;
+    width: 300px;
+    padding: 20px;
+    background-color: #E6E6E6;
+
+}
+
+.sign_up .forms form input:focus {
+    outline: none;
+}
+
+.sign_up .forms form input::placeholder {
+    color: #777;
+    transition: opacity 0.4s ease;
+}
+
+.sign_up .forms form input:focus::placeholder {
+    opacity: 0;
+}
+
+.sign_up .forms form button {
+    border-color: transparent;
+    border-radius: 22px;
+    padding: 15px 0;
+    cursor: pointer;
+    background-color: #090631;
+    color: #ffffffed;
+    font-weight: bold;
+    position: relative;
+    transition: var(--transition);
+}
+
+.sign_up .forms form button:hover {
+    transform: translateY(-3px);
+}
+
+.sign_up .forms a {
+    color: #777;
+    margin-top: 60px;
+    display: block;
+    transition: var(--transition);
+}
+
+@media (max-width: 767px) {
+    .sign_up .forms a {
+        margin-top: 35px;
+    }
+}
+
+.sign_up .forms a:hover {
+    color: #090631;
+}
+
+.sign_up .forms a i {
+    margin-left: 15px;
+}
+
+.sign_up .forms a:hover i {
+    position: relative;
+    animation: arrow 0.6s linear infinite;
+}
+
+@media (max-width: 767px) {
+    .login .forms a {
+        text-align: center;
+    }
+}
+
+.sign_up .container img {
+    border-radius: 50%;
+    width: 300px;
+    max-width: 100%;
+    position: relative;
+    animation: up-and-down 4s linear infinite;
+}
+
+@media (max-width: 767px) {
+    .sign_up .container img {
+        display: none;
+    }
+}
+
+/* end sign_up section */
+/* start animation */
+@keyframes up-and-down {
+
+    0%,
+    100% {
+        top: 0;
+    }
+
+    50% {
+        top: -50px;
+    }
+}
+
+@keyframes arrow {
+    100% {
+        transform: translate(10px);
+    }
+
+}
+
+/* end animation */

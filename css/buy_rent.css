@@ -1,0 +1,307 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --hover_color: #3F51B5;
+    --font_color: #ffffffe0;
+    --transition: 0.5s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #808080ab;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* samll */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+/* start main title */
+.main_title {
+    font-weight: normal;
+    font-size: 30px;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 100px 0;
+}
+
+.main_title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 140px;
+    background-color: var(--hover_color);
+    bottom: -30px;
+}
+
+/* end main title */
+/* start header */
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--font_color);
+    margin-bottom: 100px;
+}
+
+header nav h1 {
+    color: black;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 45px;
+}
+
+header nav ul li a {
+    color: black;
+    transition: var(--transition);
+}
+
+header nav ul a:hover {
+    color: var(--hover_color);
+}
+
+/* end header */
+/* start section */
+.det {
+    margin-bottom: 100px;
+}
+
+.det .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .det .container {
+        flex-direction: column;
+    }
+}
+
+.det .container .box_1 {
+    text-align: center;
+}
+
+.det .container .box_1 h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+.det .container .box_1 form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.det .container .box_1 form button {
+    padding: 10px 80px;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+    background-color: #777;
+    color: var(--font_color);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.4s;
+    position: relative;
+}
+
+.det .container .box_1 form button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.det .container .box_1 form button:hover {
+    transform: translateY(-5px);
+    z-index: 1;
+}
+
+.det .container .box_1 form button:hover::before {
+    background-color: black;
+    width: 100%;
+}
+
+.det .container .box_1 .color {
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.det .container .box_1 .color span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.det .container .box_1 .color .one {
+    background-color: black;
+}
+
+.det .container .box_1 .color .two {
+    background-color: red;
+}
+
+.det .container .box_1 .color .three {
+    background-color: white;
+}
+.det .container .image {
+    max-width: 630px;
+    max-height: 380px;
+}
+.det .container .image img {
+    max-width: 100%;
+}
+@media(max-width:767px){
+    .det .container .image  {
+        margin-top: 30px;
+    }
+}
+/* end section */
+/* start table */
+.table table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 100px;
+}
+
+.table table tr {
+    background-color: black;
+    color: var(--font_color);
+    font-weight: bold;
+}
+
+.table table tr td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* end table */
+/* start new cars section */
+.featured_cars {
+    margin-bottom: 100px;
+}
+
+.featured_cars .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 70px;
+}
+
+.featured_cars .container .box {
+    background-color: #777;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.featured_cars .container .box:hover {
+    transform: translateY(-12px);
+}
+
+.featured_cars .container .box .text {
+    margin: 15px;
+    color: var(--font_color);
+}
+
+.featured_cars .container .box img {
+    max-width: 100%;
+}
+
+.featured_cars .container .box h2 {
+    margin-bottom: 10px;
+}
+
+.featured_cars .container .box p {
+    font-size: 12px;
+}
+
+.featured_cars .container .box .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.featured_cars .container .box .buttons button {
+    max-width: 100%;
+    border-color: transparent;
+    margin: 0px 16px;
+    padding: 10px 50px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* end new cars section */

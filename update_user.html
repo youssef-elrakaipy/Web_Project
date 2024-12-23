@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User Data</title>
+    <!-- normalize file -->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="./css/login.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="login">
+        <div class="container">
+            <div class="image">
+                <img src="images/loginlogo.webp" alt="Logo">
+            </div>
+            <div class="forms">
+                <h2>Update Your Information</h2>
+                <form id="updateUserForm">
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="password" id="password" name="password" placeholder="New Password (optional)">
+                    <button type="submit">UPDATE</button>
+                </form>
+                <div id="message" style="color: red;"></div>
+                <a href="Login.html">
+                    Back to Login Page
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('updateUserForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(event.target);
+
+            // Send the request via AJAX
+            fetch('update_user.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // Parse the response as JSON
+            .then(data => {
+                const messageDiv = document.getElementById('message');
+                if (data.success) {
+                    messageDiv.style.color = 'green';
+                    messageDiv.innerText = data.message;
+                } else {
+                    messageDiv.style.color = 'red';
+                    messageDiv.innerText = data.message || 'Update failed. Please try again.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').innerText = 'An error occurred. Please try again later.';
+            });
+        });
+    </script>
+</body>
+</html>

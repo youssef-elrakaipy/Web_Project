@@ -1,0 +1,345 @@
+/* start global rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --font_color: #ffffffe0;
+    --transition: 0.6s;
+    --section_padding: 100px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(237, 237, 237);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* samll */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global rules */
+/* start main title */
+.main_title {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.main_title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 140px;
+    background-color: #3F51B5;
+    bottom: -30px;
+}
+
+/* end main title */
+/* start buttons */
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.buttons button {
+    max-width: 200px;
+    border-color: transparent;
+    margin-bottom: 10px;
+    padding: 10px 60px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.buttons button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.buttons button:hover {
+    color: var(--font_color);
+    z-index: 1;
+}
+
+.buttons button:hover::before {
+    background-color: black;
+    width: 100%;
+}
+
+/* end buttons */
+/* start box hover */
+.box {
+    transition: var(--transition);
+}
+
+.box:hover {
+    transform: translateY(-12px);
+}
+
+/* end box hover */
+/* start header */
+header {
+    background-image: url(../images/background99.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 100px;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 45%);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header nav h1 {
+    color: var(--font_color);
+}
+
+header nav ul li a {
+    color: var(--font_color);
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+header nav ul a:hover {
+    color: var(--hover_color);
+}
+
+
+header .container .text {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+
+header .container .text h3 {
+    color: var(--font_color);
+    margin-bottom: 25px;
+    margin-top: 150px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+header .container .text p {
+    color: var(--font_color);
+    line-height: 1.7;
+    font-size: 17px;
+    padding-bottom: 50px;
+}
+
+header .container .text .butt {
+    display: block;
+    margin-top: 20px;
+    padding-bottom: 100px;
+}
+
+header .container .text button {
+    padding: 6px 40px;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+    background-color: RGB(0 0 0 / 83%);
+    color: var(--font_color);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+header .container .text button:hover {
+    transform: translateY(-5px);
+}
+
+/* end header */
+/* start brands */
+.brands {
+    padding-top: var(--section_padding);
+    padding-bottom: var(--section_padding);
+}
+
+.brands .title {
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+
+.brands .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.brands .container .box {
+    position: relative;
+}
+
+.brands .container .box .label {
+    position: absolute;
+    top: 20%;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.brands .container .mercedes .label {
+    left: 38%;
+}
+
+.brands .container .lancer .label {
+    left: 36%;
+}
+
+.brands .container .bmw .label {
+    left: 49%;
+}
+
+.brands .container .peugeot .label {
+    left: 47%;
+}
+
+.brands .container .box::before {
+    content: '';
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 60px;
+    left: 40%;
+    top: 5%;
+    z-index: 1;
+}
+
+.brands .container .peugeot::before {
+    background-image: url(../images/Peugeot-Logo.png);
+}
+
+.brands .container .lancer::before {
+    background-image: url(../images/lancer_logo.png);
+}
+
+.brands .container .bmw::before {
+    background-image: url(../images/bmw-logo-1963.png);
+}
+
+.brands .container .mercedes::before {
+    background-image: url(../images/mercedes_logo.png);
+}
+
+.brands .container .box img {
+    max-width: 100%;
+    height: 380px;
+    border-radius: 7px;
+}
+
+
+/* end brands */
+start collection .car_collection {
+    padding-top: var(--section_padding);
+    padding-bottom: var(--section_padding);
+}
+
+.car_collection .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.car_collection .container .box {
+    background-color: #777;
+    border-radius: 14px;
+}
+
+.car_collection .container .box p {
+    color: #ffffffe6;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+
+.car_collection .container .box img {
+    max-width: 100%;
+    margin: 60px 0;
+    width: 306px;
+    height: 131px;
+}
+
+/* end collection */
